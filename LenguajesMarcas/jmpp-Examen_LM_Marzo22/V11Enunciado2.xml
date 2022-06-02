@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lunas [
+  <!ELEMENT lunas (luna)+>
+   <!ELEMENT luna EMPTY>
+      <!ATTLIST luna numero ID #REQUIRED>
+      <!ATTLIST luna nivel CDATA #REQUIRED>
+      <!ATTLIST luna planeta CDATA #IMPLIED>
+]>
+
+<lunas>
+   <luna numero="N234" nivel="H1"/>
+   <luna numero="N479" nivel="H2" planeta="Saturno"/>
+   <luna numero="N566" nivel="H2" planeta="Saturno"/>
+   <luna numero="N607" nivel="H3" planeta="Urano"/>
+</lunas>
+
+
+<!--
+
+El xml presenta 4 elementos luna, de los que 3 tienen 3 atributos y uno solo dos atributos.
+El DTD nos dice:
+- que el elemento luna es vacío, hasta aquí es correcto.
+- que debe de tener 3 atributos, a saber, numero y nivel obligatorios, mientras que planeta es opcional. Correcto
+- 
+Errores de formado:
+- el tipo del atributo nivel está mal, debe aparecer como CDATA.
+- al atributo planeta le falta el tipo, en este caso deberia ser CDATA.
+Con esto ya estaría bien formado.
+
+Errores de validado:
+- El elemento raiz lunas no tiene la declaracion de elementos que lo forman. en este caso los elementos luna, al menos uno.
+Ya quedaria validado.
+
+-->

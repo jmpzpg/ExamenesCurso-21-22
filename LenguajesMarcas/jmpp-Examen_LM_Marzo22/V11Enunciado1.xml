@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE viajes [
+<!ELEMENT viajes (francia, españa, italia)>
+   <!ELEMENT francia (ciudad+)>
+   <!ELEMENT españa (ciudad+)>
+   <!ELEMENT italia (ciudad+)>
+   <!ELEMENT ciudad (#PCDATA)>
+]>
+<viajes>  
+ 
+  <francia>
+    <ciudad>Lyon</ciudad>
+  </francia>
+  
+  <españa>
+    <ciudad>Sevilla</ciudad>
+    <ciudad>Córdoba</ciudad>
+    <ciudad>Santander</ciudad>
+  </españa>
+  
+<italia>
+  <ciudad>Roma</ciudad>
+</italia>
+
+</viajes>
+
+
+<!--
+
+El elemento raiz del documento "viajes" tiene 3 elementos segun el DTD.
+Estos deben aparecer en ese mismo orden y contener ciudades. Además obliga a que contengan al menos una ciudad.
+El elemento italia no contiene ninguna ciudad y debe tener al menos una. Añadimos la etiqueta de cierre  e incluimos la ciudad de Roma.
+Además, el nombre de las ciudades deben aparecer como contenido de los elementos ciudad. Hacemos los cambios para todas las ciudades del que tenía el documento.
+
+-->

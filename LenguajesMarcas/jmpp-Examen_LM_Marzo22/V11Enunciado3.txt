@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+Prólogo o preámbulo del documento XSD
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+Elemento raíz del documento XSD, donde se define el espacio de nombres de los elementos y tipos usados.
+
+  <xs:element name="biblioteca">
+  Declaración del elemento raiz del contenido del documento.
+  
+<xs:complexType>
+Apertura. Indica que el elemento es complejo, que no es una hoja sin atributos.
+      
+<xs:sequence>
+Apertura. Indica que los elementos que siguen son hijos y que deben aparecer en ese orden.
+
+<xs:element ref="libro" minOccurs="2" maxOccurs="unbounded"/>
+Elemento hijo que podrá aparecer 2 o n veces. Está referenciado para ser definido fuera del bloque.
+
+</xs:sequence> Cierra la secuencia al no haber más elementos hijos.
+</xs:complexType>  Cierra la definición del elemento complejo.
+</xs:element>  Cierra la declaración del elemento.
+
+<xs:element name="libro">
+Comienza la definición del elemento referenciado anteriormente.
+<xs:complexType>  Igualmente, es un elemento complejo. Comienza su declaración.
+<xs:sequence>  Apertura. Indica que los elementos que siguen son hijos y que deben aparecer en ese orden.
+<xs:element name="fecha" type="xs:date"/>
+Primer elemento hijo de libro. Se llama fecha y es de tipo "fecha"
+<xs:element name="autor" type="xs:string"  maxOccurs="2"/>
+Segundo elemento hijo de libro. Se llama autor y es de tipo "cadena", además podrá aparecer una o dos veces
+<xs:element name="editorial" type="tipoEditorial" />
+Tercer elemento hijo de libro. Se llama editorial y es de tipo personalizado "tipoEditorial". Definido fuera del bloque.
+<xs:element name="isbn" type="tipoISBN"/>
+Cuarto elemento hijo de libro. Se llama isbn y es de tipo personalizado "tipoISBN". Definido fuera del bloque.
+<xs:element name="donacion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+Quinto elemento hijo de libro. Se llama donacion y es de tipo "cadena", además podrá aparecer o no; es opcional.
+<xs:element name="ubicacion" type="tipoUbicacion"/>
+Sexto elemento hijo de libro. Se llama ubicacion y es de tipo personalizado "tipoUbicacion". Definido fuera del bloque.
+<xs:element ref="caracteristicas"/>
+Séptimo y último elemento hijo de libro. Se llama caracteristicas y está referenciado para ser declarado fuera del bloque.
+</xs:sequence>  Cierra la secuencia al no haber más elementos hijos de libro.
+<xs:attribute name="codigo" type="tipoCodigo" use="required"/>
+Declara que el elemento libro tendrá tambien un atributo llamado codigo, de tipo personalizado "tipoCodigo" (a definir fuera del bloque) y además deberá aparecer obligatoriamente.
+<xs:attribute name="titulo" type="xs:string" use="required"/> 
+Declaración de otro atributo de libro. Se llama titulo, es de tipo "cadena" y también debe aparecer obligatoriamente en el documento.
+</xs:complexType>  Cierra la definición del elemento complejo libro.
+</xs:element>  Cierra la declaración del elemento libro. A partir de aquí tendremos las declarciones de los distintos tipos personalizados, además del elemento hijo caracteristicas referenciado en el bloque de libro.
+ ----------------------------------------------------------------------------------------------
+<xs:simpleType name="tipoEditorial">
+Definición del tipo personalizado "tipoEditorial", que es de tipo simple.
+<xs:restriction base="xs:string">
+Indica que comienza la declarción de la restricción del valor sobre el tipo texto.
+<xs:enumeration value="Libros del KO"/>
+<xs:enumeration value="Flores Raras"/>
+La restricción es de carácter enumerado, pudiendo tomar únicamente el valor indicado en las 2 sentencias.
+(Libros del KO o Flores Raras) en este caso.
+</xs:restriction>  Termina la restricción sobre el tipo personalizado.
+</xs:simpleType>  Termina la declaración del tipo personalizado.
+
+<xs:simpleType name="tipoISBN">
+Definición del tipo personalizado "tipoISBN", que es de tipo simple.
+<xs:restriction base="xs:string">
+Indica que comienza la declarción de la restricción del valor sobre el tipo texto.
+<xs:pattern value="([a-z])*"/>
+La restricción es de tipo patrón. Indica que el valor del atributo deberá ser un caracter letra minúscula. el * indica que se podrán aparecer tantos caracteres como queramos.
+</xs:restriction>  Termina la restricción sobre el tipo personalizado.
+</xs:simpleType>  Termina la declaración del tipo personalizado.
+
+<xs:complexType name="tipoUbicacion">
+Definición del tipo personalizado "tipoUbicacion", que es de tipo complejo, indicando que tiene atributos.
+<xs:attribute name="sede" use="required">
+Declaración del atributo que tiene el tipo personalizado. se llama sede y deberá aparecer obligatoriamente.
+<xs:simpleType>  el atributo es simple
+<xs:restriction base="xs:string">  Comienza la restricción sobre el atributo
+<xs:enumeration value="este"/>  El atributo solo podrá tomar los valores enumerados en las declaraciones.
+<xs:enumeration value="oeste"/>  En este caso o es "este" o es "oeste"
+</xs:restriction>  Termian la restricción sobre el atributo
+</xs:simpleType>  Termina la declaración del tipo del atributo.
+</xs:attribute>  Termina la declaración del atributo.
+</xs:complexType>  Termina la declaración del tipo personalizado.
+
+<xs:simpleType name="tipoCodigo">
+Definición del tipo personalizado "tipoCodigo", que es de tipo simple.
+<xs:restriction base="xs:ID">
+Indica que comienza la declarción de la restricción del valor sobre el tipo ID. Esto indica que deberá de ser un valor único para el documento.
+<xs:length value="8"/>  Añade a la restricción que la longitud de ese ID deberá de ser de 8 caracteres.
+</xs:restriction> Termina la declaración de la restricción.
+</xs:simpleType>  Termina la declaración del tipo personalizado.
+
+<xs:element name="caracteristicas">
+Comienza la definición del elemento caracteristicas, referenciado en el bloque de libro.
+<xs:complexType>  Comienza definición del elemento, que es de tipo complejo al tener elementos hijos.
+<xs:sequence> Apertura. Indica que los elementos que siguen son hijos y que deben aparecer en ese orden.
+<xs:element name="numpaginas" type="tipoNumpaginas"/>
+Primer elemento hijo de caracteristicas. Se llama numpaginas y es de tipo personalizado "tipoNumpaginas"
+<xs:element name="calidad" type="tipoCalidad"/>
+Segundo y último elemento hijo de caracteristicas. Se llama calidad y es de tipo personalizado "tipoCalidad"
+</xs:sequence>  Cierra la secuencia al no haber más elementos hijos de caracteristicas.
+</xs:complexType>  Termina la definición del tipo del elemento caracteristicas.
+
+</xs:element>   Cierra el elemento raiz del contenido del documento.
+
+</xs:schema>  Cierra el elemento raíz del documento XSD

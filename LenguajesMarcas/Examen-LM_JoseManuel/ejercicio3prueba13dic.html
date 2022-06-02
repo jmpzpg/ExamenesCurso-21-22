@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        section {
+            background-color: wheat;
+        }
+        .padre {
+            padding: 10px;
+       }
+        section .padre {
+
+            background-color: aquamarine;
+        }
+        .padre>p {
+            padding: 20px;
+            background-color: yellow;
+        }
+        #identificador {
+            padding: 30px;
+            background-color: chartreuse;
+        }
+        #identificador>span {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        Soy la seccion padre de todo
+        <div class="padre">
+            Soy un DIV, que soy hijo de la sección
+            <p>
+                Soy un párrafo hijo del DIV con selector "clase padre"
+            </p>
+            <p id="identificador">   
+                Soy un párrafo con identificador e hijo del DIV que tengo un <span>HIJO DIRECTO dentro de un span</span>
+            </p>
+        </div>
+    </section>
+</body>
+</html>

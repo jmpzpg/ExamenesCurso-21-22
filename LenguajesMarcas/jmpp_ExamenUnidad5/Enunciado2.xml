@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Enunciado2.xsl"?>
+<aplicaciones>
+    <detalle>
+        <denominacion>InterForce</denominacion>
+        <evaluacion>Positiva</evaluacion>
+        <web><a href="https://www.interforce.uk.co" target="_blank">https://www.interforce.uk.co</a></web>
+    </detalle>
+    <detalle>
+        <denominacion>SoftLive</denominacion>
+        <evaluacion>Positiva</evaluacion>
+        <web><a href="https://www.softlive.com" target="_blank">https://www.softlive.com</a></web>
+    </detalle>
+    <detalle>
+        <denominacion>RolTrace</denominacion>
+        <evaluacion>Negativa</evaluacion>
+        <web><a href="https://www.roltrace.com" target="_blank">https://www.roltrace.com</a></web>
+    </detalle>
+  
+</aplicaciones>

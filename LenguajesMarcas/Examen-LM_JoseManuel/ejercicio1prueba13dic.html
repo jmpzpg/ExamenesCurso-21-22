@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Listas y pseudoclases</title>
+    <style type="text/css">
+ /* Escribir aquí los selectores y propiedades necesarias */
+       ul li:nth-of-type(1) { 
+           /*para el primero de la lista, fuente en color azul*/
+           color: blue;
+       }
+       ul li:nth-of-type(2) {
+           /*para el segundo de la lista, un circulito en vez de un punto*/
+           list-style-type: circle;
+       }
+       ul li:last-of-type {
+           /*para el último de la lista, fuente en color rojo*/
+           color: red;
+           font-size: x-large;
+       }
+       ul li:nth-of-type(2n+1) {
+           /*para los items impares de la lista, iconito especial */
+           list-style-image: url("vistobueno.png");
+       }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Primero</li>
+        <li>Segundo</li>
+        <li>Tercero</li>
+        <li>Cuarto</li>
+        <li>Quinto</li>
+    </ul>
+</body>
+</html>

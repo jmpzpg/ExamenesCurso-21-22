@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="region">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nombre">
+    <xs:complexType>
+      <xs:attribute name="habitantes" type="tipoHabitantes" use="required"/>
+      <xs:attribute name="toponimia" type="tipoToponimia" use="required"/>
+    </xs:complexType>
+    </xs:element>
+  <xs:simpleType name="tipoHabitantes">
+  <xs:restriction base="xs:positiveInteger">
+         <xs:maxInclusive value="900000"/>
+      </xs:restriction>
+</xs:simpleType>
+
+ <xs:simpleType name="tipoToponimia">
+  <xs:restriction base="xs:string">
+         <xs:minLength value="5"/>
+         <xs:maxLength value="15"/>
+      </xs:restriction>
+</xs:simpleType>
+
+  
+</xs:schema>

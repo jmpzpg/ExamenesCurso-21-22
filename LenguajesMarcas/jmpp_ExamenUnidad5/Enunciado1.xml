@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Enunciado1c.xsl"?>
+<lenguajes>
+  
+  <clasificacion criterio="ejecución">
+    
+    <lenguaje tipo="compilados">
+      <definicion>Se convierten primero en lenguaje máquina al pasar por un compilador antes de ser ejecutado por la máquina.</definicion>
+      <ejemplos>Java, C++, Go</ejemplos>
+    </lenguaje>
+    
+    <lenguaje tipo="interpretados">
+      <definicion>El código va directamente a la máquina y un intérprete lo traduce en tiempo de ejecución, es decir, en el mismo momento que usas el programa.</definicion>
+      <ejemplos>Javascript, PHP, Phyton</ejemplos>
+    </lenguaje>
+    
+  </clasificacion>
+  
+  <clasificacion criterio="paradigma">
+    
+    <lenguaje tipo="multiparadigma">
+      <definicion>Lenguajes en los que se puede programar de varias maneras.</definicion>
+      <ejemplos>Javascript, PHP, Phyton</ejemplos>
+    </lenguaje>
+    
+    <lenguaje tipo="poo">
+      <definicion>La programación orientada a objetos consiste en partir la programación en pedazos llamados objetos que tienen datos y comportamientos diferentes.</definicion>
+      <ejemplos>Java, Kotlin, C++, Go</ejemplos>
+    </lenguaje>
+    
+  </clasificacion>
+  
+</lenguajes>

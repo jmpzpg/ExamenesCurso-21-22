@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Mis Entradas y Mis Páginas</title>
+        <link>https://misentradasymispaginas.wordpress.com</link>
+        <description>
+            Blog personal donde recopilo mi actividad en la red. Para todos.
+        </description>
+        <language>es-ES</language>
+        <copyright>© 2022 mis entradas y mis paginas by wordpress</copyright>
+
+        <item>
+            <title>La clase del miércoles</title>
+            <link>https://misentradasymispaginas.wordpress.com/2021/04/28/la-clase-del-miercoles/
+            </link>
+            <description>No por mucho madrugar amanece más temprano dormilón.
+            </description>
+        </item>
+
+    </channel>
+</rss>

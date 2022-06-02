@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Diario de Sevilla no puede ser la primera linea, formalmente hablando-->
+<!-- faltan las comillas en el valor de version -->
+<rss version="2.0">     
+<channel>
+    <title>Diario de Sevilla - Home</title>
+    <!-- hay que quitar la barra en la etiqueta de apertura link y añadir la etiqueta de cierre -->
+    <link>https://www.diariodesevilla.es/</link>
+    <description>Diario de Sevilla - Home</description>
+    <!-- el valor de la etiqueta de lenguaje esta incompleta y la etiqueta de cierre esta mal escrita -->
+    <language>es-ES</language>
+    <item>
+        <title>Coronavirus Sevilla: Los contagios bajan del millar pero repuntan los hospitalizados</title>
+        <link>https://www.diariodesevilla.es/sevilla/coronavirus-sevilla-18-enero-2022_0_1648636337.html </link>
+        <!-- el texto Avance informativo no puede estar aqui. supongo que es el principio del valor de la etiqueta description -->
+        
+        <description>
+        Avance informativo. Los hospitales alcanzan su cifra de ingresos más alta de la sexta ola con 415 pacientes
+        </description>
+    <!-- esta etiqueta de apertura de item esta de más. se elimina -->    
+    </item>
+</channel>
+<!-- aunque se admite mayusculas o minusculas debemos usar siempre uno u otro para cada etiqueta. cambiamos RSS por rss -->
+</rss>
